@@ -1,4 +1,8 @@
 Tag::Application.routes.draw do
+  get "static_pages/Home"
+
+  get "static_pages/Help"
+
   resources :hives
 
   # The priority is based upon order of creation:
