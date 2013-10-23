@@ -1,7 +1,8 @@
 Tag::Application.routes.draw do
-  get "static_pages/Home"
-
-  get "static_pages/Help"
+  root to: 'static_pages#Home'
+  
+  
+  match '/help', to: 'static_pages#Help'
 
   resources :hives
 
