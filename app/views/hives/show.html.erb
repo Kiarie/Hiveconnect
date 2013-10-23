@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @hive.name %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%= @hive.Body %>
+</p>
+
+<p>
+  <b>Created at:</b>
+  <%= @hive.created_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_hive_path(@hive) %> |
+<%= link_to 'Back', hives_path %>
