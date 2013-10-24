@@ -3,6 +3,7 @@ Tag::Application.routes.draw do
   
   
   match '/help', to: 'static_pages#Help'
+  match '/signup', to: 'hives#new'
 
   resources :hives
 

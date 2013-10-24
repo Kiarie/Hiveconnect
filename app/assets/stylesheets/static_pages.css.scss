@@ -1,0 +1,74 @@
+// Place all the styles related to the StaticPages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+	 font-family:Tahoma,Dotum;
+}
+#topheader{
+        height:90px;
+        top:0;
+		margin-top:-7px;
+		background-color:#3d3d3d;
+		box-shadow:0em -2em 2em #000 inset;
+}
+#topheader,#bottomheader{
+        margin-left:-8px;
+        max-width:1280px;
+		min-width:1260px;
+        padding:5px;
+		color: #fff;
+		text-transform: uppercase;
+/*background-image:-webkit-gradient(linear,left top, left bottom, from(#ccc), to (#999));*/
+}
+#bottomheader{
+        float:left;
+        height:185px;
+		color: #999;
+		 border-top: 1px solid #aaa;
+		//background-color:rgba(0,0,0,.5);
+		a{
+		color: #555;
+		text-decoration:none;
+		float:right;
+		padding:7px;
+		}
+}
+#topheader a{
+		line-height:1.5;
+		font-size:0.7em;
+        color:#555009;
+       	margin:10px;
+        width:7%;
+        text-decoration:none;        
+        float:right;
+}
+#topheader a:hover,a:hover{
+        color:#D01F59;
+}
+.container{
+	padding-left:45px;
+	padding-top:none;
+}
+.middle{
+        float:center;
+		background-color:#f2f2f2;
+		width:1100px;
+		//margin-left:45px;
+		padding:30px;
+		text-align:center;
+}
+a.btn-large {
+        border-radius:2px;
+        color:white;
+		text-decoration:none;
+        padding:10px;
+        margin-top:15px;
+        margin-left:5px;
+        width:375px;
+        background-color:#5e8ce9;
+        font-size:20px;
+		&:hover{
+		box-shadow:0em -1em 1em #069 inset;
+		}
+}
