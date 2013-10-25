@@ -3,7 +3,7 @@
 <table>
   <tr>
     <th>Name</th>
-    <th>Body</th>
+    <th>email</th>
     <th>Created at</th>
     <th></th>
     <th></th>
@@ -13,7 +13,7 @@
 <% @hives.each do |hive| %>
   <tr>
     <td><%= hive.name %></td>
-    <td><%= hive.Body %></td>
+    <td><%= hive.email %></td>
     <td><%= hive.created_at %></td>
     <td><%= link_to 'Show', hive %></td>
     <td><%= link_to 'Edit', edit_hive_path(hive) %></td>
