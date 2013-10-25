@@ -1,6 +1,8 @@
+<% provide(:title, @hive.name) %>
 <p id="notice"><%= notice %></p>
-
 <p>
+<%= gravatar_for @hive %>
+</p><p>
   <b>Name:</b>
   <%= @hive.name %>
 </p>
