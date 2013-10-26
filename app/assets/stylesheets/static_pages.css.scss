@@ -18,15 +18,17 @@ body {
 }
 #topheader,#bottomheader{
         margin-left:-8px;
-        max-width:1280px;
-		min-width:1260px;
+		margin-right:-5px;
+        /*max-width:1280px;
+		min-width:1260px;*/
+		clear:both;
         padding:5px;
 		color: #fff;
 		text-transform: uppercase;
 /*background-image:-webkit-gradient(linear,left top, left bottom, from(#ccc), to (#999));*/
 }
 #bottomheader{
-        float:left;
+        //float:left;
         height:185px;
 		color: #999;
 		 border-top: 1px solid #aaa;
