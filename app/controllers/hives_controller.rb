@@ -44,7 +44,7 @@ class HivesController < ApplicationController
 
     respond_to do |format|
       if @hive.save
-        format.html { redirect_to @hive, notice: 'Hive was successfully created.' }
+        format.html { redirect_to @hive, notice: 'Hive User was successfully created.' }
         format.json { render json: @hive, status: :created, location: @hive }
       else
         format.html { render action: "new" }

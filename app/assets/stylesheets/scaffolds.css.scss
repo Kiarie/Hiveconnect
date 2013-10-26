@@ -36,18 +36,22 @@ div {
 
 #notice {
   color: green;
+  background-color:#fff;
+  display:block;
+  padding:2px;
 }
 
 .field_with_errors {
-  padding: 2px;
-  background-color: #ccc;
+  //padding: 2px;
+  //width:450px;
+  background-color: #f0f0f0;
   display: block;
-  border:1px solid #5ce8e9;
+  border:1px solid #c00;
 }
 
 #error_explanation {
   width: 450px;
-  border: 2px solid red;
+  border: 1px solid red;
   padding: 7px;
   padding-bottom: 0;
   margin-bottom: 20px;
