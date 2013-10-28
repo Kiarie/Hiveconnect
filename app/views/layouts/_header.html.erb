@@ -1,5 +1,18 @@
 <header id="topheader"><h2><%= full_title(yield(:title)) %></h2>
 <div class="links"><%= link_to "Home", root_path %>
 <%= link_to "Help", help_path %>
-<%= link_to "SignUp", signup_path %></div>
+<%= link_to "SignUp", signup_path %>
+<% if sign_in? %>
+<span id="dropdown">
+<a href="#" >Account</a>
+<ul>
+<li><%=link_to "settings" %></li>
+<li><%=link_to "Profile", current_user %></li>
+<li><%= link_to "Sign Out", signout_path, method: "delete" %></li>
+</ul>
+</span>
+<% else %>
+<%= link_to "Login", signin_path %>
+<% end %>
+</div>
 </header>

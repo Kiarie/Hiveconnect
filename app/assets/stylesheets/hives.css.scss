@@ -8,18 +8,3 @@
 		box-sizing: border-box;
 		border-radius:4px;
 }
-input, textarea, select {
-	border:1px solid #bbb;
-	width:20em;
-	padding:10px;
-	height:auto;
-	margin-bottom:15px;
-	@include box_sizing;
-}
-input[type=submit]{
-	width:10em;
-	background-color:#5e8ce9;
-    font-size:20px;
-	color:white;
-	box-shadow:0em -1em 1em #104E8B inset;
-}

@@ -15,9 +15,11 @@ body {
 		background-color:#3d3d3d;
 		box-shadow:0em -2em 1em #000 inset;
 		}
+#topheader a{
+		font-size:10px;
+		}
 #topheader h2{
 		letter-spacing:-1px;
-		width:300px;
 		}
 #topheader,#bottomheader{
         margin-left:-8px;
@@ -37,6 +39,7 @@ body {
 		text-decoration:none;
 		float:right;
 		padding:7px;
+		font-size:14px;
 		}
 
 .links{
@@ -52,7 +55,7 @@ body {
         text-decoration:none;        
  }
 
-#topheader a:hover,a:hover{
+#topheader a:hover{
         color:#5e8ce9;
 }
 .container{
@@ -77,7 +80,7 @@ body {
 		letter-spacing:-1px;
 }
 
-a.btn-large {
+.btn-large {
         border-radius:2px;
         color:white;
 		text-decoration:none;
@@ -91,3 +94,37 @@ a.btn-large {
 a.btn-large:hover{color:white;
 		box-shadow:0em -1em 1em #069 inset;
 		}
+input, textarea, select {
+	border:1px solid #bbb;
+	width:20em;
+	padding:10px;
+	height:auto;
+	margin-bottom:15px;
+	@include box_sizing;
+}
+input[type=submit]{
+	width:10em;
+	background-color:#5e8ce9;
+    font-size:20px;
+	color:white;
+	box-shadow:0em -1em 1em #104E8B inset;
+}
+
+#dropdown ul{
+	visibility: hidden;
+	background-color:rgba(0, 0, 0, .5);
+	display:block;
+	position:absolute;
+	float:right;
+	margin-top:5px;
+	right:1px;
+	color:white;
+	}
+#dropdown ul li{
+	padding:5px;
+	border-bottom:1px dotted #fafaf5;
+	line-height:1.5;
+	}
+#dropdown:hover ul, #dropdown:hover ul li{
+	visibility:visible;
+	}

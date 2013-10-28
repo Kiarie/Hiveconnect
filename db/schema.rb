@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131025125758) do
+ActiveRecord::Schema.define(:version => 20131028141237) do
 
   create_table "hives", :force => true do |t|
     t.string   "name"
@@ -19,8 +19,10 @@ ActiveRecord::Schema.define(:version => 20131025125758) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "password_digest"
+    t.string   "remember_token"
   end
 
   add_index "hives", ["email"], :name => "index_hives_on_email", :unique => true
+  add_index "hives", ["remember_token"], :name => "index_hives_on_remember_token"
 
 end
