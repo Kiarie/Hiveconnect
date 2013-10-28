@@ -2,8 +2,8 @@ Tag::Application.routes.draw do
   root to: 'static_pages#Home'
   
   
-  match '/help', to: 'static_pages#Help'
-  match '/signup', to: 'hives#new'
+  match '/help' => 'static_pages#Help'
+  match '/signup' => 'hives#new'
 
   resources :hives
 
