@@ -114,16 +114,19 @@ input[type=submit]{
 	visibility: hidden;
 	background-color:rgba(0, 0, 0, .5);
 	display:block;
+	width:120px;
 	position:absolute;
 	float:right;
 	margin-top:5px;
 	right:1px;
-	color:white;
 	}
 #dropdown ul li{
 	padding:5px;
 	border-bottom:1px dotted #fafaf5;
 	line-height:1.5;
+}
+#dropdown ul li a{
+	color:white;
 	}
 #dropdown:hover ul, #dropdown:hover ul li{
 	visibility:visible;
