@@ -100,7 +100,7 @@ input, textarea, select {
 	padding:10px;
 	height:auto;
 	margin-bottom:15px;
-	@include box_sizing;
+	/*@include box_sizing;*/
 }
 input[type=submit]{
 	width:10em;
