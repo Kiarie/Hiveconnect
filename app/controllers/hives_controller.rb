@@ -61,7 +61,8 @@ class HivesController < ApplicationController
 
     respond_to do |format|
       if @hive.update_attributes(params[:hive])
-        format.html { redirect_to @hive, notice: 'Hive was successfully updated.' }
+		sign_in @hive
+        format.html { redirect_to @hive, notice: 'Your Profile was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }

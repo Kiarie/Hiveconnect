@@ -27,7 +27,16 @@
 	<%=f.label :password_confirmation, "Confirm"%><br/>
 	<%=f.password_field :password_confirmation %>
   </div>
+ 
   <div class="actions">
+  <% if sign_in? %>
+  <%=f.submit "save changes", class: "btn-large" %>
+  </br>
+  <%= gravatar_for @hive %>
+  <a href="http://gravatar.com/emails">change</a>
+  <% else %>
     <%= f.submit "Create Account", class: "btn-large" %>
   </div>
+  
+  <% end %>
 <% end %>
