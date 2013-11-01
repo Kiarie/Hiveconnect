@@ -1,8 +1,10 @@
 class HivesController < ApplicationController
   # GET /hives
   # GET /hives.json
+  before_filter :signed_in_user , only: [:index, :edit, :update]
+  before_filter :correct_user, only:[:edit, :update]
   def index
-    @hives = Hive.all
+    @hives = Hive.paginate(page: params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -82,4 +84,15 @@ class HivesController < ApplicationController
       format.json { head :ok }
     end
   end
-end
+  private
+  def signed_in_user
+  unless sign_in? 
+  store_location
+  redirect_to signin_path, notice: 'Please Sign in to Access this page' 
+  end
+  end
+  def correct_user
+  @hive = Hive.find(params[:id])
+  redirect_to root_path, notice: 'you cannot update another users profile' unless current_user?(@hive)
+  end
+  end

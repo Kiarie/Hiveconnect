@@ -1,27 +1,22 @@
-<h1>Listing hives</h1>
+<%= provide(:title, current_user.name) %>
+<h1>All HiveConnect Users</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>email</th>
-    <th>Created at</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<%= will_paginate %><br/>
 
 <% @hives.each do |hive| %>
-  <tr>
-    <td><%= hive.name %></td>
-    <td><%= hive.email %></td>
-    <td><%= hive.created_at %></td>
-    <td><%= link_to 'Show', hive %></td>
-    <td><%= link_to 'Edit', edit_hive_path(hive) %></td>
-    <td><%= link_to 'Destroy', hive, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
+  <div class="list">
+	<%= gravatar_for hive %>
+    <%= hive.name %>    <%= hive.email %>
+    <%= time_ago_in_words(hive.created_at) %> ago 
+    <%= link_to 'Show', hive %>
+    <%= link_to 'Edit', edit_hive_path(hive) %>
+    <%= link_to 'Destroy', hive, confirm: 'Are you sure?', method: :delete %>
+  </div> 
 
-<br />
+<% end %>
+<%= will_paginate %>
+
+
+<br/>
 
 <%= link_to 'New Hive', new_hive_path %>

@@ -1,4 +1,8 @@
-<% provide(:title, 'Home') %>
+<% if sign_in? %>
+<%provide(:title, current_user.name) %>
+<% else %><% provide(:title, 'Home') %>
+<%end%>
+<p id="notice"><%= notice %></p>
 <div class="middle">
 <h1>Welcome to StaticPages</h1>
 <p>Find me in this Social Connection for Christian User Interaction</p>

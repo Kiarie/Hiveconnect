@@ -4,8 +4,8 @@ Tag::Application.routes.draw do
   
   match '/help' => 'static_pages#Help'
   match '/signup' => 'hives#new'
-  match '/signout', to: 'sessions#destroy', via: :delete
-  match '/signin', to: 'sessions#new'
+  match '/signout' => 'sessions#destroy', via: :delete
+  match '/signin' => 'sessions#new'
 
   resources :hives
   resources :sessions, only: [:new, :create, :destroy]
