@@ -9,7 +9,7 @@
 <li><%= link_to "Edit Profile", edit_hive_path(current_user) %></li>
 <li><%=link_to "Users", hives_path %></li>
 <li><%=link_to "Profile", current_user %></li>
-<li><%= link_to "Sign Out", signout_path, method: 'delete' %></li>
+<li><%= link_to "Sign Out", signout_path, method: :delete %></li>
 </ul>
 </span>
 <% else %>
