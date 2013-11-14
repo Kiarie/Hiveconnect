@@ -1,12 +1,24 @@
 <% if sign_in? %>
 <%provide(:title, current_user.name) %>
-<% else %><% provide(:title, 'Home') %>
-<%end%>
 <p id="notice"><%= notice %></p>
+<div class = "row">
+	<aside class="span4">
+	<%= render 'shared/user_info' %>
+	</aside>
+	<aside>
+	<%= render 'shared/micropost_form' %>
+	</aside>
+</div>
+
+<% else %><% provide(:title, 'Home') %>
+
+<p id="notice"><%= notice %></p>
+
+
 <div class="middle">
 <h1>Welcome to StaticPages</h1>
 <p>Find me in this Social Connection for Christian User Interaction</p>
 <%= link_to "SignUp" ,new_hive_path , class:'btn-large' %>
 <p>Already have an account? <%= link_to "Sign In", signin_path %></p>
 </div>
-<%=link_to image_tag("rails.png", alt:"rails")%>
+<%=link_to image_tag("rails.png", alt:"rails")%><%end%>

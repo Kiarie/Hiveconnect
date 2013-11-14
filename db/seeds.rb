@@ -9,6 +9,6 @@
 #admin.toggle!(:admin)
 users = Hive.all(limit:6)
 	50.times do
-	content = "sample content".to_a.shuffle.to_s
-	users.each {|f| f.microposts.create!(content: content)}
+	content = "sample content"
+	users.each{|f| f.microposts.create!(content: content)}
 	end

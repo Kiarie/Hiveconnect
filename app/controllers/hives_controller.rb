@@ -86,12 +86,6 @@ class HivesController < ApplicationController
     end
   end
   private
-  def signed_in_user
-  unless sign_in? 
-  store_location
-  redirect_to signin_path, notice: 'Please Sign in to Access this page' 
-  end
-  end
   def correct_user
   @hive = Hive.find(params[:id])
   redirect_to root_path, notice: 'you cannot update another users profile' unless current_user?(@hive)
