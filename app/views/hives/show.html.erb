@@ -13,9 +13,19 @@
 </p>
 
 <p>
-  <b>Created at:</b>
+  <b>Created:</b>
   <%= time_ago_in_words(@hive.created_at) %> ago
 </p>
+<section id="aside">
+<% if @hive.microposts.any? %>
+	<h3>Microposts (<%= @hive.microposts.count %>)</h3>
+	<ol>
+	<%= render @microposts %>
+	</ol>
+	<%= will_paginate @microposts %>
+	<% end %>
+	
 
+</section>
 
 <%= link_to 'Edit', edit_hive_path(@hive) %>

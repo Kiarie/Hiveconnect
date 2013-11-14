@@ -5,12 +5,10 @@
 
 <% @hives.each do |hive| %>
   <div class="list">
-	<%= gravatar_for hive %>
-    <%= hive.name %>    <%= hive.email %>
-    <%= time_ago_in_words(hive.created_at) %> ago 
-    <%= link_to 'Show', hive %>
-    <%= link_to 'Edit', edit_hive_path(hive) %>
-    <%= link_to 'Destroy', hive, confirm: 'Are you sure?', method: :delete %>
+	<%= gravatar_for hive %>	<%= link_to hive.name, hive %>
+   <% if current_user.admin? %>
+	 | <%=link_to 'Destroy', hive, confirm: 'Are you sure?', method: :delete %>
+	<% end %>
   </div> 
 
 <% end %>

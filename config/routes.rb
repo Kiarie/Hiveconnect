@@ -1,14 +1,13 @@
 Tag::Application.routes.draw do
   root to: 'static_pages#Home'
-  
+  resources :hives
+  resources :sessions, only: [:new, :create, :destroy]
   
   match '/help' => 'static_pages#Help'
   match '/signup' => 'hives#new'
   match '/signout' => 'sessions#destroy', via: :delete
   match '/signin' => 'sessions#new'
 
-  resources :hives
-  resources :sessions, only: [:new, :create, :destroy]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

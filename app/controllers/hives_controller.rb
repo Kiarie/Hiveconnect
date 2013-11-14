@@ -1,8 +1,9 @@
 class HivesController < ApplicationController
   # GET /hives
   # GET /hives.json
-  before_filter :signed_in_user , only: [:index, :edit, :update]
+  before_filter :signed_in_user , only: [:index, :edit, :update, :destroy]
   before_filter :correct_user, only:[:edit, :update]
+  before_filter :admin_user, only: :destroy
   def index
     @hives = Hive.paginate(page: params[:page])
 
@@ -16,7 +17,7 @@ class HivesController < ApplicationController
   # GET /hives/1.json
   def show
     @hive = Hive.find(params[:id])
-
+	@microposts = @hive.microposts.paginate(page: params[:page])
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @hive }
@@ -94,5 +95,8 @@ class HivesController < ApplicationController
   def correct_user
   @hive = Hive.find(params[:id])
   redirect_to root_path, notice: 'you cannot update another users profile' unless current_user?(@hive)
+  end
+  def admin_user
+  redirect_to root_path unless current_user.admin?
   end
   end

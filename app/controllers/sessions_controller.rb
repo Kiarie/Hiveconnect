@@ -12,7 +12,7 @@ def create
 	end
 end
 def destroy
-	sign_out
+	sign_out()
 	redirect_to signin_path
 end
 

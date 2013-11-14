@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+#admin = Hive.create(name: 'mburu kiarie', email: 'kiambu@yahoo.com', password: 'poopoo', password_confirmation: 'poopoo')
+#admin.toggle!(:admin)
+users = Hive.all(limit:6)
+	50.times do
+	content = "sample content".to_a.shuffle.to_s
+	users.each {|f| f.microposts.create!(content: content)}
+	end
