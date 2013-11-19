@@ -1,6 +1,6 @@
 .microposts {
 list-style: none;
-margin: 10px 0 0 0;
+margin: 0 0 0 0;
 li {
 padding: 10px 0;
 border-top: 1px solid #e8e8e8;
@@ -16,12 +16,20 @@ color: #999;
 float: left;
 margin-right: 10px;
 }
-#aside {
-float: right;
-width:800px;
+aside {
+float: left;
 overflow:auto;
 textarea {
 height: 100px;
 margin-bottom: 5px;
+}
+}
+#aside{
+float:left;
+width:700px;
+margin-left: 10px;
+/*background-color: rgba(0,0,0,.5);*/
+h3{
+margin-left:3em;
 }
 }

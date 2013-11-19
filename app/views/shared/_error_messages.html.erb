@@ -1,10 +1,9 @@
 <% if object.errors.any? %>
 <div class ="errors">
-	<%=pluralize(object.errors.count, "error") %>
+	<%=pluralize(object.errors.count, "error") %> prohibited this post to be saved!
 	<% object.errors.full_messages.each do |msg|%>
-	<ul>
-	<li>* <%= msg %></li>
+	<br>* <%= msg %>
 	<% end %>
-	</ul>
+
 </div>
 <% end %>

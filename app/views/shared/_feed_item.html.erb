@@ -1,0 +1,15 @@
+<li id="<%= feed_item.id %>">
+<%= link_to gravatar_for(feed_item.hive), feed_item.hive %>
+<span id = "user">
+<%= link_to feed_item.hive.name, feed_item.hive %>
+<span>
+<span class = "content">
+<%= feed_item.content %>
+</span>
+<span class = "timestamp">
+<%= time_ago_in_words(feed_item.created_at) %>
+</span>
+<% if current_user?(feed_item.hive) %>
+<%= link_to "delete", feed_item, method: :delete, confirm: "You sure?", content: feed_item.content %>
+<% end %>
+</li>
