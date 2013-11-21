@@ -1,6 +1,10 @@
 Tag::Application.routes.draw do
   root to: 'static_pages#Home'
-  resources :hives
+  resources :hives do 
+	member do
+		get :followers, :following
+		end
+  end
   resources :sessions, only: [:new, :create, :destroy]
   resources :microposts, only: [:create, :destroy]
   
