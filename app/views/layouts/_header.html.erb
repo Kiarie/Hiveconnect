@@ -4,7 +4,7 @@
 <%= link_to "SignUp", signup_path %>
 <% if sign_in? %>
 <span id="dropdown">
-<a href="#" ><%=yield(:title)%></a>
+<a href="#" ><%=current_user.name%></a>
 <ul>
 <li><%= link_to "Edit Profile", edit_hive_path(current_user) %></li>
 <li><%=link_to "Users", hives_path %></li>

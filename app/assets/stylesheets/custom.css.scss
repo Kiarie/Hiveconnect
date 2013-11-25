@@ -49,13 +49,18 @@ text-decoration: none;
 color: #5e8ce9;
 }
 }
+
 strong {
 display: block;
 }
 }
 .user_avatars {
+float: left;
 overflow: auto;
 margin-top: 10px;
+width:250px;
+padding:10px 0;
+clear: left;
 .gravatar {
 margin: 1px 1px;
 }
