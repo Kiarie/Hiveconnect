@@ -1,7 +1,7 @@
 class HivesController < ApplicationController
   # GET /hives
   # GET /hives.json
-  before_filter :signed_in_user , only: [:index, :edit, :update, :destroy]
+  before_filter :signed_in_user , only: [:index, :edit, :update, :destroy, :following, :followers]
   before_filter :correct_user, only:[:edit, :update]
   before_filter :admin_user, only: :destroy
   def index
@@ -84,6 +84,18 @@ class HivesController < ApplicationController
       format.html { redirect_to hives_url }
       format.json { head :ok }
     end
+  end
+  def following
+  @title = "Following"
+  @user = Hive.find(params[:id])
+  @hives = @user.followed_hives.paginate(page: params[:page])
+  render 'show_follow'
+  end
+  def followers
+  @title = "Followers"
+  @user = Hive.find(params[:id])
+  @hives = @user.followers.paginate(page: params[:page])
+  render "show_follow"
   end
   private
   def correct_user

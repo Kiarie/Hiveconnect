@@ -7,7 +7,7 @@ Tag::Application.routes.draw do
   end
   resources :sessions, only: [:new, :create, :destroy]
   resources :microposts, only: [:create, :destroy]
-  
+  resources :relationships, only: [:create, :destroy]
   match '/help' => 'static_pages#Help'
   match '/signup' => 'hives#new'
   match '/signout' => 'sessions#destroy', via: :delete

@@ -1,0 +1,9 @@
+<% unless current_user?(@hive) %>
+<div class = "follow">
+<% if current_user.following?(@hive) %>
+<%= render 'unfollow' %>
+<% else %>
+<%= render 'follow' %>
+<% end %>
+</div>
+<% end %>

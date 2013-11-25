@@ -12,8 +12,10 @@
   <b>email:</b>
   <%= @hive.email %>
 </p>
+<%= render 'shared/stats' %>
 </aside>
 <section id="aside">
+<%= render 'follow_form' if sign_in? %>
 <% if @hive.microposts.any? %>
 	<h3>Microposts (<%= @hive.microposts.count %>)</h3>
 	<ol class= "microposts">

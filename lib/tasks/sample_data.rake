@@ -1,17 +1,11 @@
 namespace :db do
 desc "populate database"
 task populate: :environment do
-		99.times do |n|
-			name = "kiamtu#{n+1}"
-			email = "example#{n+1}@yahoo.com"
-			password = "passpass"
-			passcon = "passpass"
-
-		Hive.create!(name: name,
-				email: email,
-				password: password,
-				password_confirmation: passcon
-				)
-		end
+	users = Hive.all
+	user = users.first
+	followed_users = users[1..20]
+	followers = users[20..45]
+	followed_users.each{ |followed| users.follow!(followed) }
+	followers.each{ |follower| follower.follow!(user) }
 	end
 end

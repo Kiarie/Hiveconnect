@@ -1,0 +1,31 @@
+<% provide(:title, @title) %>
+<div class="kando">
+<div id="left">
+<a href="<%= hive_path(current_user) %>">
+	<%= gravatar_for current_user, size: 52 %></a>
+<h1><%= current_user.name %>
+</h1>
+<span><%= link_to 'view my profile', current_user  %>
+</span>
+<b>
+<%= pluralize(current_user.microposts.count, "Micropost")%>
+</b>	
+</div>
+<%= render 'shared/stats' %>
+<section>
+<% if @hives.any? %>
+<div class="user_avatars">
+<%= @hives.each do |hive| %>
+<%= link_to gravatar_for(user, size: 30), user %>
+<% end %>
+</div></section>
+<section class="aside">
+<% if @hives.any? %>
+<ul class="microposts">
+<% @hives.each do |user| %>
+<li><%= link_to gravatar_for(user, size: 30), user %>
+<%= link_to user.name, user %></li>
+<% end %>
+<% end %>
+</ul>
+</div>

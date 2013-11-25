@@ -1,0 +1,11 @@
+<% @hive ||= current_user %>
+<div class="stats">
+<a href ="<%= following_hive_path(@hive)%>">
+	<strong><%= @hive.followed_hives.count %>
+	<br>following</strong>
+	</a>
+<a href= "<%= followers_hive_path(@hive)%>">
+	<strong><%= @hive.followers.count %><br>
+	followers</strong>
+	</a>
+</div>
