@@ -4,11 +4,11 @@
 <%= link_to "SignUp", signup_path %>
 <% if sign_in? %>
 <span id="dropdown">
-<a href="#" ><%=provide(:title, current_user.name%></a>
+<a href="#" ><%=yield(:title)%></a>
 <ul>
+<li><%=link_to "Profile", current_user %></li>
 <li><%= link_to "Edit Profile", edit_hive_path(current_user) %></li>
 <li><%=link_to "Users", hives_path %></li>
-<li><%=link_to "Profile", current_user %></li>
 <li><%= link_to "Sign Out", signout_path, :method => 'delete' %></li>
 </ul>
 </span>

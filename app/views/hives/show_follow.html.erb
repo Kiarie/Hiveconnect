@@ -1,4 +1,4 @@
-<% provide(:title, @title) %>
+<% provide(:title, current_user.name) %>
 <div class="kando">
 <aside id="left">
 <a href="<%= hive_path(current_user) %>">
@@ -22,6 +22,7 @@
 </div></section>
 </aside>
 <section id="aside">
+<h3><%= @title %></h3>
 <% if @hives.any? %>
 <ol>
 <% @hives.each do |user| %>
